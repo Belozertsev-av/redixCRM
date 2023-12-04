@@ -4,14 +4,10 @@
            <v-app-bar :elevation="5">
             <ul>
                 <li>
-                    <v-btn>
-                        <NuxtLink to="/" class="a1">Home</NuxtLink>
-                    </v-btn>
+                    <NuxtLink to="/" class="a1"><v-btn>Авторизация</v-btn></NuxtLink>
                 </li>
                 <li>
-                    <v-btn>
-                        <NuxtLink to="/about" class="a1">About</NuxtLink>
-                    </v-btn>
+                    <NuxtLink to="/about" class="a1"><v-btn>Главное окно</v-btn></NuxtLink>
             </li>
            </ul>
         </v-app-bar>
