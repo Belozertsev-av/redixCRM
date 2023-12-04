@@ -60,9 +60,26 @@ export default {
         width: 100px;
         height: 100px;
         margin-bottom: 50px;
+        position: relative;
+        z-index: 1;
+        &::before{
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            background-color: #0093ff;
+            background-size: 100px 100px;
+            background-position: center;
+            opacity: 0.3;
+            filter: blur(30px);
+        }
         img{
             width: 100%;
             height: 100%;
+            z-index: 2;
             object-fit: contain;
         }
     }
