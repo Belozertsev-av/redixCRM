@@ -38,7 +38,6 @@ export default {
         return {
             show1: false,
             show2: true,
-            password: 'Password',
             rules: {
                 required: value => !!value || 'Необходимо заполнить поле',
                 min: v => v.length >= 8 || 'Минимум 8 символов',

@@ -19,6 +19,13 @@ export default defineNuxtConfig({
         transformAssetUrls,
       },
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "~/assets/scss/_variables.scss" as *;`
+        }
+      }
+    }
   },
   app: {
     head: {
@@ -32,5 +39,6 @@ export default defineNuxtConfig({
         { rel: 'icon', href: '/redix_logo.png', type: 'image/png' }
       ]
     }
-  }
+  },
+  css: ["~/assets/scss/main.scss"]
 })
