@@ -1,0 +1,7 @@
+@import "./nullstyle.scss";
+@import "./_variables";
+
+body {
+    font-family: "Roboto";
+    @include adaptive-value("font-size", $fontSizeStart, $fontSizeEnd, 0);
+}
