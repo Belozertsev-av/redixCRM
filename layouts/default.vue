@@ -9,6 +9,9 @@
                 <li>
                     <NuxtLink to="/about" class="a1"><v-btn>Главное окно</v-btn></NuxtLink>
                 </li>
+                <li>
+                    <NuxtLink to="/mypage" class="a1"><v-btn>Моя страница</v-btn></NuxtLink>
+                </li>
            </ul>
         </v-app-bar>
         </header>

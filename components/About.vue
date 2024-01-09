@@ -12,6 +12,11 @@
             @click:append-inner="onClick"
           ></v-text-field>
     </div>
+    <div>
+        <v-btn>
+            Hello World
+        </v-btn>
+    </div>
 </template>
 
 <script setup>
