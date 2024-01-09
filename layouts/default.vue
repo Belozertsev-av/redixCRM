@@ -8,7 +8,7 @@
                 </li>
                 <li>
                     <NuxtLink to="/about" class="a1"><v-btn>Главное окно</v-btn></NuxtLink>
-            </li>
+                </li>
            </ul>
         </v-app-bar>
         </header>
