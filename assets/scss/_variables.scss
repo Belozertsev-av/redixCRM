@@ -1,12 +1,19 @@
 $fontSizeStart: 16;
 $fontSizeEnd: 12;
+$subtextSizeStart: 14;
+$subtextSizeEnd: 12;
 $titleSizeStart: 22;
 $titleSizeEnd: 18;
 $subtitleSizeStart: 18;
 $subtitleSizeEnd: 16;
+$radius: 4px;
+$padding: 5px;
+$paddingMedium: 15px;
+$paddingGrand: 30px;
 
 $backgroundColor: #fff;
-$backgroundSecondaryColor: #f5f5f5;
+$unactiveColor: #efeded;
+$unactiveFontColor: #989898;
 $fontColor: #000;
 $fontSecondaryColor: rgba(
     $color: #000000,

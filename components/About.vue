@@ -1,20 +1,15 @@
 <template>
-    <div>
-        <h2>About</h2>
-        <v-text-field
-            :loading="loading"
-            density="compact"
-            variant="solo"
-            label="Search templates"
-            append-inner-icon="web_asset"
-            single-line
-            hide-details
-            @click:append-inner="onClick"
-          ></v-text-field>
+    <div class="center">
+        <mainCategoryDiagram 
+        category="Ключи"
+        percent="40"
+        sum="20000"
+        ></mainCategoryDiagram>
     </div>
 </template>
 
 <script setup>
+import mainCategoryDiagram from './Digrams/mainCategoryDiagram.vue';
 
 </script>
 
@@ -23,5 +18,11 @@
     h2 {
         margin-top: 150px;
         text-align: center;
+    }
+    .center{
+        width: 100%;
+        margin: 150px auto;
+        display: flex;
+        justify-content: center;
     }
 </style>
