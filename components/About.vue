@@ -1,10 +1,6 @@
 <template>
     <div class="center">
-        <mainCategoryDiagram 
-        category="Ключи"
-        percent="40"
-        sum="20000"
-        ></mainCategoryDiagram>
+        <h2>About</h2>
     </div>
 </template>
 
@@ -16,7 +12,6 @@ import mainCategoryDiagram from './Digrams/mainCategoryDiagram.vue';
 <style lang="scss" scoped>
 
     h2 {
-        margin-top: 150px;
         text-align: center;
     }
     .center{
@@ -24,5 +19,6 @@ import mainCategoryDiagram from './Digrams/mainCategoryDiagram.vue';
         margin: 150px auto;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
     }
 </style>
