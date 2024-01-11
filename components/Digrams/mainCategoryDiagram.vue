@@ -24,7 +24,14 @@
 
 <script setup lang="ts">
 
-// Обьявление пропсов
+/* Обьявление пропсов и переменных
+
+category - обьявляет категорию диаграммы, влияет на цвет и тайтл. может быть: repair, keys, products, refund 
+
+sum - Фактическая сумма заработанных средств по заданной категории за месяц на данный момент
+
+profit - Фактическая сумма заработанных средств в общем за месяц на данный момент
+*/
 const props = defineProps({
     category: {
         type: String,
@@ -43,6 +50,8 @@ const props = defineProps({
     }
 })
 const percent = ref(Math.round(props.sum / props.profit * 100))
+
+// Условная отрисовка, в зависимости от передаваемых пропсов
 const color = ref('$primaryColor')
 const title = ref('Категория')
 const icon = ref('default.svg')
