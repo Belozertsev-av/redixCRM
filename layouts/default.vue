@@ -7,7 +7,7 @@
                     <NuxtLink to="/" class="a1"><v-btn>Авторизация</v-btn></NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink to="/mainPage" class="a1"><v-btn>Главное окно</v-btn></NuxtLink>
+                    <NuxtLink to="/about" class="a1"><v-btn>Главное окно</v-btn></NuxtLink>
             </li>
            </ul>
         </v-app-bar>
