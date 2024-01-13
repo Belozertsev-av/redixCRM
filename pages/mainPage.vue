@@ -35,9 +35,11 @@
             plan="500000"></main-month-diagram>
         </p>
     </div>
+    <mainSideBar></mainSideBar>
 </template>
 
 <script setup>
+import mainSideBar from '~/components/mainSideBar.vue'
 import MainCategoryDiagram from '~/components/Digrams/mainCategoryDiagram.vue'
 import MainMonthDiagram from '~/components/Digrams/MainMonthDiagram.vue'
 </script>
