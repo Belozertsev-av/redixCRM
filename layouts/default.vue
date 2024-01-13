@@ -1,7 +1,8 @@
 <template>
     <v-app>
         <header>
-           <v-app-bar :elevation="5">
+           <!-- <v-app-bar :elevation="5">
+        
             <ul>
                 <li>
                     <NuxtLink to="/" class="a1"><v-btn>Авторизация</v-btn></NuxtLink>
@@ -10,8 +11,11 @@
                     <NuxtLink to="/mainPage" class="a1"><v-btn>Главное окно</v-btn></NuxtLink>
             </li>
            </ul>
-        </v-app-bar>
+        </v-app-bar> -->
+        <MainHeader></MainHeader>
+        <MainToolbar></MainToolbar>
         </header>
+        
         <main>
             <slot></slot>
         </main>
