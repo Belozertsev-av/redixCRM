@@ -1,8 +1,6 @@
 <template>
     <div class="center">
-        <p>
-            <div class="title">Тестовое окно</div>
-        </p>
+        <div class="title">Тестовое окно</div>
         <p>
             <main-menu></main-menu>
         </p>
@@ -38,8 +36,8 @@
 </template>
 
 <script setup>
-import mainCategoryDiagram from '~/components/Digrams/MainCategoryDiagram.vue';
-import mainMonthDiagram from '~/components/Digrams/MainMonthDiagram.vue';
+import MainCategoryDiagram from '~/components/Digrams/mainCategoryDiagram.vue'
+import MainMonthDiagram from '~/components/Digrams/MainMonthDiagram.vue'
 </script>
 
 <style lang="scss" scoped>
