@@ -1,15 +1,13 @@
 <template>
     <div class="category-diagram">
-        <v-card class="category-diagram__body" 
-        elevation="4">
+        <v-card class="category-diagram__body" elevation="4">
             <div class="category-diagram__icon">
                 <v-icon :color="color" size="40" :icon="icon"></v-icon>
             </div>
             <div class="category-diagram__title title">{{ title }}</div>
             <div class="category-diagram__progress-bar">
                 <div class="progress-bar__body">
-                    <div class="progress-bar__bar"
-                    :style="`width: ${percent}%; background-color: ${color};`"></div>
+                    <div class="progress-bar__bar" :style="`width: ${percent}%; background-color: ${color};`"></div>
                 </div>
             </div>
             <div class="category-diagram__stats">
@@ -48,14 +46,14 @@ const props = defineProps({
         default: 0
     }
 })
-const percent = ref(Math.round(props.sum / props.profit * 100))
+const percent = ref((props.sum !== 0 && props.profit !== 0) ? Math.round(props.sum / props.profit * 100) : 0)
 if (percent.value > 100) percent.value = 100
 
 // Условная отрисовка, в зависимости от передаваемых пропсов
 
-const color = ref('$primaryColor')
+const color = ref('#989898')
 const title = ref('Категория')
-const icon = ref('default.svg')
+const icon = ref('mdi-help')
 
 if (props.category === 'keys') {
     color.value = '#46bc32'
@@ -77,44 +75,49 @@ if (props.category === 'keys') {
 </script>
 
 <style lang="scss" scoped>
-    .category-diagram{
-        &__body{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            text-align: start;
-            margin: $padding;
-            @include adaptive-value('width', 160, 140, 0);
-            padding: $paddingMedium;
-        }
-        &__icon{
-            padding-bottom: $paddingMedium;
-        }
-        &__title{
-            padding-bottom: $padding * 2;
-        }
-        &__progress-bar{
-            width: 100%;
-        }
-        &__stats{
-            padding-bottom: $padding;
-        }
+.category-diagram {
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: start;
+        margin: $padding;
+        @include adaptive-value('width', 160, 140, 0);
+        padding: $paddingMedium;
     }
-    .progress-bar{
-        &__body{
-            background-color: $unactiveColor;
-            width: 100%;
-            height: 10px;
-            border-radius: $radius;
-            margin-bottom: $paddingMedium;
-        }
-        &__bar{
-            transition: 0.2s;
-            width: 40%;
-            background-color: $primaryColor;
-            height: 10px;
-            border-radius: $radius;
-        }
+
+    &__icon {
+        padding-bottom: $paddingMedium;
     }
-</style>
+
+    &__title {
+        padding-bottom: $padding * 2;
+    }
+
+    &__progress-bar {
+        width: 100%;
+    }
+
+    &__stats {
+        padding-bottom: $padding;
+    }
+}
+
+.progress-bar {
+    &__body {
+        background-color: $unactiveColor;
+        width: 100%;
+        height: 10px;
+        border-radius: $radius;
+        margin-bottom: $paddingMedium;
+    }
+
+    &__bar {
+        transition: 0.2s;
+        width: 40%;
+        background-color: $primaryColor;
+        height: 10px;
+        border-radius: $radius;
+    }
+}</style>

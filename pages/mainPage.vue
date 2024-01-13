@@ -25,6 +25,8 @@
                 sum="10000"
                 profit="500000">
             </main-category-diagram>
+            <main-category-diagram>
+            </main-category-diagram>
         </p>
         <p>
             <main-month-diagram
