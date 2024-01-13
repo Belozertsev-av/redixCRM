@@ -18,3 +18,7 @@ body {
     @include adaptive-value("font-size", $subtextSizeStart, $subtextSizeEnd, 0);
     color: $fontSecondaryColor;
 }
+.text {
+    font-family: "Roboto", sans-serif;
+    @include adaptive-value("font-size", $fontSizeStart, $fontSizeEnd, 0);
+}
