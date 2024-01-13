@@ -34,6 +34,14 @@
             sum="450000"
             plan="500000"></main-month-diagram>
         </p>
+        <p>
+            <main-item status="surcharge"
+                cash="2300"></main-item>
+            <main-item status="guarantee"
+                days="7"></main-item>
+            <main-item status="paid"></main-item>
+            <main-item status="guarantee-gone"></main-item>
+        </p>
     </div>
     
 </template>
@@ -46,7 +54,7 @@ import MainMonthDiagram from '~/components/Digrams/MainMonthDiagram.vue'
 <style lang="scss" scoped>
     .center{
         width: 100%;
-        margin: 150px auto;
+        margin: 50px auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -54,8 +62,11 @@ import MainMonthDiagram from '~/components/Digrams/MainMonthDiagram.vue'
         flex-wrap: wrap;
     }
     p{
+        width: 80%;
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         margin: 5px 10px;
     }
 </style>
