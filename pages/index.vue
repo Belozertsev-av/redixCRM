@@ -1,8 +1,9 @@
 <template>
-    <home/>
+    <auth-window/>
 </template>
 
 <script setup>
+import AuthWindow from '~/components/AuthWindow.vue';
 
 </script>
 

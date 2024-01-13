@@ -38,7 +38,6 @@ export default {
         return {
             show1: false,
             show2: true,
-            password: 'Password',
             rules: {
                 required: value => !!value || 'Необходимо заполнить поле',
                 min: v => v.length >= 8 || 'Минимум 8 символов',
@@ -62,20 +61,6 @@ export default {
         margin-bottom: 50px;
         position: relative;
         z-index: 1;
-        &::before{
-            content: "";
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            z-index: -1;
-            top: 0;
-            left: 0;
-            background-color: #0093ff;
-            background-size: 100px 100px;
-            background-position: center;
-            opacity: 0.3;
-            filter: blur(30px);
-        }
         img{
             width: 100%;
             height: 100%;
