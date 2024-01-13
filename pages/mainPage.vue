@@ -35,6 +35,7 @@
             plan="500000"></main-month-diagram>
         </p>
     </div>
+    
 </template>
 
 <script setup>
