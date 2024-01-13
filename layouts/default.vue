@@ -1,13 +1,13 @@
 <template>
     <v-app>
-      <header>
-        <v-app-bar :elevation="5">
-          <ul>
-            <li>
-              <NuxtLink to="/" class="nav-link"><v-btn>Главная</v-btn></NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/about" class="nav-link"><v-btn>Настройки</v-btn></NuxtLink>
+        <header>
+           <v-app-bar :elevation="5">
+            <ul>
+                <li>
+                    <NuxtLink to="/" class="a1"><v-btn>Авторизация</v-btn></NuxtLink>
+                </li>
+                <li>
+                    <NuxtLink to="/mainPage" class="a1"><v-btn>Главное окно</v-btn></NuxtLink>
             </li>
           </ul>
         </v-app-bar>
@@ -44,5 +44,4 @@
         color: #72c2f8;
       }
     }
-    
-  </style>
+</style> 

@@ -1,47 +1,10 @@
 
 <template>
-  <div id="app">
-    <button @click="togglePanel" class="open-button">
-      <svg-icon type="mdi" :path="menuIconPath"></svg-icon>
-    </button>
-    
-    <transition name="slide">
-      <div v-if="showPanel"  class="side-panel">
-        <ul>
-          <li>
-            <div class="avatar-container">
-              <div class="avatar"></div>
-              <div class="user-info">
-                <a href="#">Иван Иванов</a>
-                <div><a href="#">Администратор</a></div>
-              </div>
-            </div>
-          </li>
-          <li><hr></li>
-          <li><a href="#">Заказы товаров и материалов</a></li>
-          <li><a href="#">Закрытие смены</a></li>
-          <li><a href="#">Выход</a></li>
-        </ul>
-        <div v-if="showNotification" class="notification">
-          <div class="icon-applicationIcon"><svg-icon type="mdi" :path="applicationIconPath"></svg-icon></div>
-          <div class="text-container">
-            <p><strong>I'm an Alert Usage</strong></p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam earum, est illo quae fugit voluptatum fuga magni hi</p>
-          </div>
-          <button @click="closeNotification" class="closebuttonnotification">
-            <svg-icon type="mdi" :path="closeIconPath"></svg-icon>
-          </button>
-        </div>
-      </div>      
-    </transition>
-  </div>
-
-  
+    <auth-window/>
 </template>
 
-<script>
-import SvgIcon from '@jamescoyle/vue-icon';
-import { mdiClose, mdiApplicationOutline, mdiMenu } from '@mdi/js';
+<script setup>
+import AuthWindow from '~/components/AuthWindow.vue';
 
 export default {
   components: {

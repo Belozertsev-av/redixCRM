@@ -1,0 +1,24 @@
+@import "./nullstyle.scss";
+@import "./_variables";
+
+body {
+    font-family: "Roboto", sans-serif;
+    @include adaptive-value("font-size", $fontSizeStart, $fontSizeEnd, 0);
+}
+.title {
+    @include adaptive-value("font-size", $titleSizeStart, $titleSizeEnd, 0);
+    font-weight: 700;
+}
+
+.subtitle {
+    @include adaptive-value("font-size", $subtitleSizeStart, $subtitleSizeEnd, 0);
+}
+
+.subtext {
+    @include adaptive-value("font-size", $subtextSizeStart, $subtextSizeEnd, 0);
+    color: $fontSecondaryColor;
+}
+.text {
+    font-family: "Roboto", sans-serif;
+    @include adaptive-value("font-size", $fontSizeStart, $fontSizeEnd, 0);
+}
