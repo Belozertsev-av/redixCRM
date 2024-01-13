@@ -3,7 +3,7 @@
         <v-card class="category-diagram__body" 
         elevation="4">
             <div class="category-diagram__icon">
-                <img :src="'/img/' + icon" alt="icon">
+                <v-icon :color="color" size="40" :icon="icon"></v-icon>
             </div>
             <div class="category-diagram__title title">{{ title }}</div>
             <div class="category-diagram__progress-bar">
@@ -23,7 +23,6 @@
 </template>
 
 <script setup lang="ts">
-
 /* Обьявление пропсов и переменных
 
 category - обьявляет категорию диаграммы, влияет на цвет и тайтл. может быть: repair, keys, products, refund 
@@ -50,8 +49,10 @@ const props = defineProps({
     }
 })
 const percent = ref(Math.round(props.sum / props.profit * 100))
+if (percent.value > 100) percent.value = 100
 
 // Условная отрисовка, в зависимости от передаваемых пропсов
+
 const color = ref('$primaryColor')
 const title = ref('Категория')
 const icon = ref('default.svg')
@@ -59,19 +60,19 @@ const icon = ref('default.svg')
 if (props.category === 'keys') {
     color.value = '#46bc32'
     title.value = 'Ключи'
-    icon.value = 'keys.svg'
+    icon.value = 'mdi-key-chain-variant'
 } else if (props.category === 'repair') {
     color.value = '#1f93ff'
     title.value = 'Ремонт'
-    icon.value = 'repair.svg'
+    icon.value = 'mdi-shoe-formal'
 } else if (props.category === 'products') {
     color.value = '#d8cd2c'
     title.value = 'Продажи'
-    icon.value = 'products.svg'
+    icon.value = 'mdi-cash-register'
 } else if (props.category === 'refund') {
     color.value = '#ff471f'
     title.value = 'Возврат'
-    icon.value = 'refund.svg'
+    icon.value = 'mdi-cash-refund'
 }
 </script>
 
@@ -84,15 +85,11 @@ if (props.category === 'keys') {
             align-items: flex-start;
             text-align: start;
             margin: $padding;
-            @include adaptive-value('width', 160, 145, 0);
+            @include adaptive-value('width', 160, 140, 0);
             padding: $paddingMedium;
         }
         &__icon{
             padding-bottom: $paddingMedium;
-            img{
-                width: 40px;
-                height: 40px;
-            }
         }
         &__title{
             padding-bottom: $padding * 2;
