@@ -1,42 +1,61 @@
 <template>
     <div class="center">
-        <h2>About</h2>
-        <div class="test">
-            <div>
-                <MainMenu></MainMenu>
-            </div>
-        <div>
-            <MainItem></MainItem>
-            <MainItem status='surcharge'></MainItem>
-            <MainItem status='paid'></MainItem>
-            <MainItem status='guarantee'></MainItem>
-            <MainItem status='guarantee-gone'></MainItem>
-        </div>
-    </div>
+        <div class="title">Тестовое окно</div>
+        <p>
+            <main-menu></main-menu>
+        </p>
+        <p>
+            <main-category-diagram
+                category="keys"
+                sum="100000"
+                profit="500000">
+            </main-category-diagram>
+            <main-category-diagram
+                category="repair"
+                sum="300000"
+                profit="500000">
+            </main-category-diagram>
+            <main-category-diagram
+                category="products"
+                sum="50000"
+                profit="500000">
+            </main-category-diagram>
+            <main-category-diagram
+                category="refund"
+                sum="10000"
+                profit="500000">
+            </main-category-diagram>
+            <main-category-diagram>
+            </main-category-diagram>
+        </p>
+        <p>
+            <main-month-diagram
+            month="jan"
+            sum="450000"
+            plan="500000"></main-month-diagram>
+        </p>
     </div>
     
 </template>
 
 <script setup>
-
-import mainCategoryDiagram from '~/components/Digrams/mainCategoryDiagram.vue';
-
+import MainCategoryDiagram from '~/components/Digrams/mainCategoryDiagram.vue'
+import MainMonthDiagram from '~/components/Digrams/MainMonthDiagram.vue'
 </script>
 
 <style lang="scss" scoped>
-    h2 {
-        text-align: center;
-    }
     .center{
         width: 100%;
         margin: 150px auto;
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
     }
-
-    .test {
+    p{
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 5px 10px;
     }
 </style>
