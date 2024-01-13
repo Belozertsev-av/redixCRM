@@ -24,6 +24,8 @@
 
 <script setup lang="ts">
 
+// import { ref } from 'vue'
+
 /* Обьявление пропсов и переменных
 
 category - обьявляет категорию диаграммы, влияет на цвет и тайтл. может быть: repair, keys, products, refund 
@@ -50,6 +52,8 @@ const props = defineProps({
     }
 })
 const percent = ref(Math.round(props.sum / props.profit * 100))
+
+const test = ref()
 
 // Условная отрисовка, в зависимости от передаваемых пропсов
 const color = ref('$primaryColor')
