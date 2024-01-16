@@ -43,11 +43,11 @@
             <main-item status="guarantee-gone"></main-item>
         </p>
     </div>
-    
+    <mainSideBar></mainSideBar>
 </template>
 
 <script setup>
-import mainSideBar from '~/components/mainSideBar.vue'
+import mainSideBar from '~/components/MainSideBar.vue'
 import MainCategoryDiagram from '~/components/Digrams/mainCategoryDiagram.vue'
 import MainMonthDiagram from '~/components/Digrams/MainMonthDiagram.vue'
 </script>
