@@ -5,6 +5,9 @@
             <main-menu></main-menu>
         </p>
         <p>
+            <mainSideBar></mainSideBar>
+        </p>
+        <p>
             <main-category-diagram
                 category="keys"
                 sum="100000"
@@ -42,8 +45,10 @@
             <main-item status="paid"></main-item>
             <main-item status="guarantee-gone"></main-item>
         </p>
+        <p>
+            <main-results></main-results>
+        </p>
     </div>
-    <mainSideBar></mainSideBar>
 </template>
 
 <script setup>
