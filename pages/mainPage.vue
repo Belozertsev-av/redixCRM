@@ -1,53 +1,13 @@
 <template>
-    <div class="center">
-        <div class="title">Тестовое окно</div>
-        <div class="block">
-            <main-menu></main-menu>
+    <div class="main">
+        <main-menu class="main__menu"></main-menu>
+        <div class="main__journal">
+            <main-item 
+            v-for="item in 20" 
+            class="main__item"
+            :key="item.id"></main-item>
         </div>
-        <div class="block">
-            <main-side-bar></main-side-bar>
-        </div>
-        <div class="block">
-            <main-category-diagram
-                category="keys"
-                sum="100000"
-                profit="500000">
-            </main-category-diagram>
-            <main-category-diagram
-                category="repair"
-                sum="300000"
-                profit="500000">
-            </main-category-diagram>
-            <main-category-diagram
-                category="products"
-                sum="50000"
-                profit="500000">
-            </main-category-diagram>
-            <main-category-diagram
-                category="refund"
-                sum="10000"
-                profit="500000">
-            </main-category-diagram>
-            <main-category-diagram>
-            </main-category-diagram>
-        </div>
-        <div class="block">
-            <main-month-diagram
-            month="jan"
-            sum="450000"
-            plan="500000"></main-month-diagram>
-        </div>
-        <div class="block">
-            <main-item status="surcharge"
-                cash="2300"></main-item>
-            <main-item status="guarantee"
-                days="7"></main-item>
-            <main-item status="paid"></main-item>
-            <main-item status="guarantee-gone"></main-item>
-        </div>
-        <div class="block">
-            <main-results></main-results>
-        </div>
+        <main-results class="main__results"></main-results>
     </div>
 </template>
 
@@ -55,24 +15,40 @@
 import mainSideBar from '~/components/MainSideBar.vue'
 import MainCategoryDiagram from '~/components/Digrams/mainCategoryDiagram.vue'
 import MainMonthDiagram from '~/components/Digrams/MainMonthDiagram.vue'
+const items = reactive({})
 </script>
 
 <style lang="scss" scoped>
-    .center{
+    .main{
         width: 100%;
-        margin: 50px auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    .block{
-        width: 80%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 5px 10px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 320px auto;
+        grid-auto-rows: auto 70px;   
+        &__menu{
+            grid-column-start: 1;
+            grid-column-end: 1;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            z-index: 3;
+        }
+        &__journal{
+            grid-column-start: 2;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            height: calc(100dvh - 140px);
+            overflow-y: scroll;
+        }
+        &__results {
+            grid-column-start: 2;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 2;
+            z-index: 2;
+        }
     }
 </style>

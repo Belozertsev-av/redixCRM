@@ -61,11 +61,11 @@
 
 .sorting{
     &__main{
-        @include adaptive-value('width', 320, 290, 0);
-        padding: $padding;
+        width: 320px;
         height: 100%;
     }
     &__main-body{
+        border-radius: 0;
         padding: $padding * 2;
         width: 100%;
         height: 100%;

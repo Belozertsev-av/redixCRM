@@ -4,6 +4,10 @@
 body {
     font-family: "Roboto", sans-serif;
     @include adaptive-value("font-size", $fontSizeStart, $fontSizeEnd, 0);
+    overflow: hidden;
+    &::-webkit-scrollbar {
+        width: 0;
+    }
 }
 .title {
     @include adaptive-value("font-size", $titleSizeStart, $titleSizeEnd, 0);

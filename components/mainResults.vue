@@ -33,7 +33,7 @@ const props = defineProps(
     align-items: center;
     justify-content: right;
     padding: $padding;
-
+    border-radius: 0;
     &__item{
         margin: 0 $paddingMedium;
     }

@@ -49,7 +49,7 @@ export default {
 
 <style lang="scss" scoped>
     .card{
-        margin: 120px auto 0 auto;
+        margin: 40px auto 0 auto;
         display: flex;
         flex-direction: column;
         justify-content: center;

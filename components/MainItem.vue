@@ -110,12 +110,12 @@ if (props.status === 'surcharge') {
         width: 100%;
         height: 75px;
         padding: 20px;
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 2fr 2.5fr 1fr 2fr 2fr;
         align-items: center;
     }
     &__btn {
-        width: 250px;
+        width: 100%;
         height: 32px;
     }
     &__datentime {
