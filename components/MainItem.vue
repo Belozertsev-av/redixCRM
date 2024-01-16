@@ -1,46 +1,46 @@
 <template>
-    <div class="order-status_main">
-        <div class="order-status_main_number">
-            <div class="order-status_main_number_num">
+    <div class="order-status__main">
+        <div class="order-status__number">
+            <div class="order-status__num">
                 {{ props.itemdata.orderNum }}
             </div>
-            <div class="order-status_main_number_datentime">
-                <div class="order-status_main_number_datentime_date subtext">
+            <div class="order-status__datentime">
+                <div class="order-status__date subtext">
                     {{ props.itemdata.orderDate }}
                 </div>
-                <div class="order-status_main_number_datentime_time subtext">
+                <div class="order-status__time subtext">
                     {{ props.itemdata.orderTime }}
                 </div>
             </div>
         </div>
-        <div class="order-status_main_FIO">
-            <div class="order-status_main_FIO_name">
+        <div class="order-status__fio">
+            <div class="order-status__fio-name">
                 {{ props.itemdata.orderName }}
             </div>
-            <div class="order-status_main_FIO_phone subtext">
+            <div class="order-status__fio-phone subtext">
                 {{ props.itemdata.orderPhone }}
             </div>
         </div>
-        <div class="order-status_main_payments">
-            <div class="order-status_main_payments_sum">
+        <div class="order-status__payments">
+            <div class="order-status__sum">
                 {{ props.itemdata.orderPay }}руб.
             </div>
         </div>
-        <div class="order-status_main_quantity">
-            <div class="order-status_main_quantity_all">
+        <div class="order-status__quantity">
+            <div class="order-status__quantity-all">
                 {{ props.itemdata.orderQuantity }} изделия
             </div>
-            <div class="order-status_main_quantity_check">
-                <div class="order-status_main_quantity_check_ready subtext">
+            <div class="order-status__quantity-check">
+                <div class="order-status__quantity-ready subtext">
                     Готово: {{ props.itemdata.orderQuantityCheck }}
                 </div>
-                <div class="order-status_main_quantity_check_issued subtext">
+                <div class="order-status__quantity-issued subtext">
                     Выдано: {{ props.itemdata.orderQuantityIssued }}
                 </div>
             </div>
         </div>
-        <div class="order-status_buttons">
-            <v-btn class="order-status_buttons_btn title"
+        <div class="order-status__buttons">
+            <v-btn class="order-status__btn"
             :style="`background-color: ${color}; color: ${fontcolor}`">
                 {{ title }}
             </v-btn>
@@ -105,46 +105,35 @@ if (props.status === 'surcharge') {
 </script>
 
 <style lang="scss" scoped>
-    .order-status_main {
-        margin: 70px 0px 0px 0px;
-        width: 1000px;
+.order-status{
+    &__main {
+        width: 100%;
         height: 75px;
         padding: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-
-    .order-status_buttons_btn {
+    &__btn {
         width: 250px;
         height: 32px;
     }
-
-    .order-status_main_number_datentime {
+    &__datentime {
+        padding-top: $padding;
         display: flex;
     }
-
-    .order-status_main_quantity_check {
+    &__time{
+        padding-left: $padding * 2;
+    }
+    &__quantity-check {
+        padding-top: $padding;
         display: flex;
     }
-
-    .order-status_main_number_datentime {
-        padding: 5px 0px 0px 0px;
+    &__quantity-issued{
+        padding-left: $padding * 2;
     }
-
-    .order-status_main_FIO_phone {
-        padding: 5px 0px 0px 0px;
+    &__fio-phone {
+        padding-top: $padding;
     }
-
-    .order-status_main_quantity_check {
-        padding: 5px 0px 0px 0px;
-    }
-
-    .order-status_main_number_datentime_time {
-        padding: 0px 0px 0px 10px;
-    }
-
-    .order-status_main_quantity_check_issued {
-        padding: 0px 0px 0px 10px;
-    }
+}
 </style>
