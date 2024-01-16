@@ -1,13 +1,13 @@
 <template>
     <div class="center">
         <div class="title">Тестовое окно</div>
-        <p>
+        <div class="block">
             <main-menu></main-menu>
-        </p>
-        <p>
-            <mainSideBar></mainSideBar>
-        </p>
-        <p>
+        </div>
+        <div class="block">
+            <main-side-bar></main-side-bar>
+        </div>
+        <div class="block">
             <main-category-diagram
                 category="keys"
                 sum="100000"
@@ -30,24 +30,24 @@
             </main-category-diagram>
             <main-category-diagram>
             </main-category-diagram>
-        </p>
-        <p>
+        </div>
+        <div class="block">
             <main-month-diagram
             month="jan"
             sum="450000"
             plan="500000"></main-month-diagram>
-        </p>
-        <p>
+        </div>
+        <div class="block">
             <main-item status="surcharge"
                 cash="2300"></main-item>
             <main-item status="guarantee"
                 days="7"></main-item>
             <main-item status="paid"></main-item>
             <main-item status="guarantee-gone"></main-item>
-        </p>
-        <p>
+        </div>
+        <div class="block">
             <main-results></main-results>
-        </p>
+        </div>
     </div>
 </template>
 
@@ -67,7 +67,7 @@ import MainMonthDiagram from '~/components/Digrams/MainMonthDiagram.vue'
         align-items: center;
         flex-wrap: wrap;
     }
-    p{
+    .block{
         width: 80%;
         display: flex;
         flex-wrap: wrap;

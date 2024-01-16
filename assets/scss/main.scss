@@ -12,6 +12,7 @@ body {
 
 .subtitle {
     @include adaptive-value("font-size", $subtitleSizeStart, $subtitleSizeEnd, 0);
+    font-weight: 700;
 }
 
 .subtext {
@@ -21,4 +22,8 @@ body {
 .text {
     font-family: "Roboto", sans-serif;
     @include adaptive-value("font-size", $fontSizeStart, $fontSizeEnd, 0);
+}
+.link {
+    color: #fff;
+    opacity: 1;
 }

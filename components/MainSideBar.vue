@@ -1,144 +1,89 @@
 
 <template>
-    <div id="app">
-      
-      <transition name="slide">
-        <div class="side-panel">
-          <ul>
-            <li>
-              <div class="avatar-container">
-                <v-icon icon="mdi-account-circle-outline" size="40" color="#fff"></v-icon>
-                <div class="user-info">
-                  <a href="#">Иван Иванов</a>
-                  <div><a href="#">Администратор</a></div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        <ul class="orders" >
-            <div class="separation"></div>
-            <li>Заказы товаров и материалов</li>
-            <li>Закрытие смены</li>
-            <li>Выход</li>
-        </ul>
-          <div class="notification">
-            <div class="icon-applicationIcon">
-                <v-icon icon="mdi-application-outline"></v-icon>
-            </div>
-            <div class="text-container">
-              <p><strong>I'm an Alert Usage</strong></p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam earum, est illo quae fugit voluptatum fuga magni hi</p>
-            </div>
-            
-              <v-icon class="closebuttonnotification" icon="mdi-close"></v-icon>
-            
-          </div>
-        </div>      
-      </transition>
+  <v-card elevation="4" class="sidebar">
+    <div class="sidebar__avatar-body">
+        <v-icon class="sidebar__icon" icon="mdi-account-circle-outline" size="40" color="#fff"></v-icon>
+      <div class="sidebar__account">
+        <div class="sidebar__name text">Иванов Иван</div>
+        <div class="sidebar__post subtext">Администратор</div>
+      </div>
     </div>
-  
-    
-  </template>
+    <div class="sidebar__divider"></div>
+    <div class="sidebar__list-body">
+      <ul class="sidebar__list">
+        <li class="sidebar__item"><NuxtLink to="#" class="link">Заказы товаров и материалов</NuxtLink></li>
+        <li class="sidebar__item"><NuxtLink to="#" class="link">Закрытие смены</NuxtLink></li>
+        <li class="sidebar__item"><NuxtLink to="#" class="link">Выход</NuxtLink></li>
+      </ul>
+    </div>
+    <div class="sidebar__error-body">
+      <v-alert
+        closable
+        class="sidebar__error"
+        icon="mdi-application-outline"
+        title="I'm an Alert Usage"
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam earum, est illo quae fugit voluptatum fuga magnihi">
+      </v-alert>
+    </div>
+  </v-card>
+</template>
   
   
   <style lang="scss" scoped>
-  .separation{
-    height: 1px;
-    width: 100%;
-    background-color: white;
-    margin-top: 10px;
-  }
-  ul {
-      list-style-type: none;
-     }
+  .sidebar {
+      background-color: $secondaryColor;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      width: 320px;
+      height: 100%;
 
-  ul li{
-        font-size: 17px;
-        color: #f0f0f0;
-    }
+  		&__avatar-body {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: $paddingMedium;
+  		}
 
-   .orders li{
-    margin-top: 20px;
-   } 
+  		&__icon {
+        margin-right: $paddingMedium;
+  		}
 
-  .avatar-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .avatar {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    background-color: rgb(106, 106, 250);
-    margin-bottom: 10px;
- 
-  }
-  
-  .user-info {
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .user-info a {
-    text-decoration: none;
-    color: rgb(255, 255, 255); 
-  }
-  
-  .user-info div a {
-    color: rgb(255, 255, 255);
-    opacity: .5;
-  }
-  .side-panel {
-    width: 100%; 
-    max-width: 286px;
-    height: 60%;
-    background-color: #0063BE; 
-    position: fixed;
-    top: 76px;
-    left: 0;
-    overflow-y: auto;
-    padding: 20px;
-  }
-  
-  .notification {
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    width: 250px;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #f0f0f0;
-  }
-  
-  .closebuttonnotification {
-    position: absolute;
-    margin-right: 10px;
-    right: 0;
-  }
-  .icon-applicationIcon {
-    margin-right: 10px;
-  }
-  .text-container {
-    flex-grow: 1; 
-    padding-right: 20px;
-  }
-  .text-container p {
-    margin: 0; 
+  		&__account {
+        display: flex;
+        flex-direction: column;
+  		}
+
+  		&__post {
+        color: rgba(
+        $color: #fff,
+        $alpha: 0.56
+        );
+  		}
+
+  		&__divider {
+        margin: 0 auto;
+        width: calc(100% - $paddingGrand);
+        height: 1px;
+        background-color: #fff;
+        
+  		}
+
+  		&__list-body {
+          padding: $paddingMedium;
+  		}
+      
+  		&__item {
+        padding: $padding 0;
+  		}
+
+  		&__error-body {
+        margin: $paddingMedium;
+  		}
+
+  		&__error {
+        cursor: pointer;
+  		}
   }
 
-  @media (min-width: 600px) {
-    .side-panel {
-      width: 100%;
-    }
-  }
-  
-  @media (min-width: 768px) {
-    .side-panel {
-      width: 100%;
-    }
-  }
-  
-  
   </style>
