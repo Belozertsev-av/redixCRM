@@ -1,45 +1,55 @@
 <template>
-    <div class="sorting_main">
-        <div class="sorting_main_search">
-            <v-menu>
-                <template v-slot:activator="{ props }">
-                    <v-text-field v-bind="props" label="Диапазон журнала" append-inner-icon="mdi-magnify">
-                    </v-text-field>
-                </template>
-                <v-date-picker>
-                </v-date-picker>
-            </v-menu>
-        </div>
-        <div class="sorting_main_twinbuttons">
-            <v-btn class="sorting_main_twinbuttons_button">
-                За сегодня
-            </v-btn>
-            <v-btn class="sorting_main_twinbuttons_button">
-                За все время
-            </v-btn>
-        </div>
-        <div class="sorting_main_search">
-            <v-text-field class="sorting_main_search_textfield" label="Поиск" append-inner-icon="mdi-magnify"
-            ></v-text-field>
-        </div>
-        <div class="sorting_main_checkboxes">
-            <v-checkbox class="sorting_main_checkboxes_checkbox" label="По номеру квитанции"></v-checkbox>
-            <v-checkbox class="sorting_main_checkboxes_checkbox" label="По фамилии"></v-checkbox>
-            <v-checkbox class="sorting_main_checkboxes_checkbox" label="По дате оформления квитанции"></v-checkbox>
-            <v-checkbox class="sorting_main_checkboxes_checkbox" label="По расчетной дате выдачи"></v-checkbox>
-            <v-checkbox class="sorting_main_checkboxes_checkbox" label="По номеру телефона"></v-checkbox>
-        </div>
-        <div class="sorting_main_footerbuttons">
-            <v-btn class="sorting_main_footerbuttons_button">
-                Ремонт
-            </v-btn>
-            <v-btn class="sorting_main_footerbuttons_button">
-                Ключи
-            </v-btn>
-            <v-btn class="sorting_main_footerbuttons_button">
-                Косметика
-            </v-btn>
-        </div>
+    <div class="sorting__main">
+        <v-card class="sorting__main-body" elevation="4">
+            <div class="sorting__search">
+                    <v-menu>
+                        <template v-slot:activator="{ props }">
+                            <v-text-field v-bind="props" label="Интервал от" variant="solo" class="sorting__search-from" append-inner-icon="mdi mdi-calendar-blank">
+                            </v-text-field>
+                        </template>
+                        <v-date-picker>
+                        </v-date-picker>
+                    </v-menu>
+                    <v-menu>
+                    <template v-slot:activator="{ props }">
+                        <v-text-field v-bind="props" label="Интервал до" variant="solo" class="sorting__search-to" append-inner-icon="mdi mdi-calendar-blank">
+                        </v-text-field>
+                    </template>
+                    <v-date-picker>
+                    </v-date-picker>
+                </v-menu>
+            </div>
+            <div class="sorting__twinbuttons">
+                <v-btn class="sorting__button">
+                    За сегодня
+                </v-btn>
+                <v-btn class="sorting__button">
+                    За все время
+                </v-btn>
+            </div>
+            <div class="sorting__search">
+                <v-text-field class="sorting__textfield" label="Поиск" append-inner-icon="mdi-magnify"
+                ></v-text-field>
+            </div>
+            <v-radio-group class="sorting__checkboxes">
+                <v-radio class="sorting__checkbox" value="num" label="По номеру квитанции"></v-radio>
+                <v-radio class="sorting__checkbox" value="fio" label="По фамилии"></v-radio>
+                <v-radio class="sorting__checkbox" value="date_start" label="По дате оформления квитанции"></v-radio>
+                <v-radio class="sorting__checkbox" value="date-end" label="По расчетной дате выдачи"></v-radio>
+                <v-radio class="sorting__checkbox" value="phone" label="По номеру телефона"></v-radio>
+            </v-radio-group>
+            <div class="sorting__footerbuttons">
+                <v-btn class="sorting__footerbuttons-button">
+                    Ремонт
+                </v-btn>
+                <v-btn class="sorting__footerbuttons-button">
+                    Ключи
+                </v-btn>
+                <v-btn class="sorting__footerbuttons-button">
+                    Косметика
+                </v-btn>
+            </div>
+        </v-card>
     </div>
 </template>
 
@@ -47,50 +57,54 @@
     
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
-    .sorting_main {
-        max-width: 320px;
-        margin: 70px 0px 0px 50px;
-        padding: 10px;
+.sorting{
+    &__main{
+        @include adaptive-value('width', 320, 290, 0);
+        padding: $padding;
+        height: 100%;
     }
-
-    .sorting_main_search {
-        margin-top: 20px;
+    &__main-body{
+        padding: $padding * 2;
+        width: 100%;
+        height: 100%;
     }
-
-    .sorting_main_search:first-child {
-        margin-top: 0px;
-    }
-
-    .sorting_main_twinbuttons {
+    &__search{
+        margin-top: $paddingMedium;
         display: flex;
         justify-content: space-between;
     }
-
-    .sorting_main_twinbuttons_button {
-        padding: 10px, 15px, 10px, 15px;
+    &__search-from{
+        margin-right: $padding;
     }
-
-    .sorting_main_checkboxes_checkbox {
-        margin-top: -40px;
+    &__search-to{
+        margin-left: $padding;
+    }
+    &__twinbuttons{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__button {
+        width: 48%;
+    }
+    &__checkboxes{
+        display: flex;
+        flex-direction: column;
+    }
+    &__checkbox{
         color: black;
     }
-
-    .sorting_main_checkboxes_checkbox:first-child {
-        margin-top: 0px;
-    }
-
-    .sorting_main_footerbuttons {
+    &__footerbuttons{
         display: grid;
     }
-
-    .sorting_main_footerbuttons_button {
-        margin-top: 15px;
+    &__footerbuttons-button{
+        margin-top: $paddingMedium;
+        &:first-child{
+            margin-top: 0px;
+        }
     }
 
-    .sorting_main_footerbuttons_button:first-child {
-        margin-top: 0px;
-    }
+}
 
 </style>
