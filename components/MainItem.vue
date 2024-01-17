@@ -2,40 +2,40 @@
     <div class="order-status__main">
         <div class="order-status__number">
             <div class="order-status__num">
-                {{ props.itemdata.orderNum }}
+                {{ props.itemData.orderNum }}
             </div>
             <div class="order-status__datentime">
                 <div class="order-status__date subtext">
-                    {{ props.itemdata.orderDate }}
+                    {{ props.itemData.orderDate }}
                 </div>
                 <div class="order-status__time subtext">
-                    {{ props.itemdata.orderTime }}
+                    {{ props.itemData.orderTime }}
                 </div>
             </div>
         </div>
         <div class="order-status__fio">
             <div class="order-status__fio-name">
-                {{ props.itemdata.orderName }}
+                {{ props.itemData.orderName }}
             </div>
             <div class="order-status__fio-phone subtext">
-                {{ props.itemdata.orderPhone }}
+                {{ props.itemData.orderPhone }}
             </div>
         </div>
         <div class="order-status__payments">
             <div class="order-status__sum">
-                {{ props.itemdata.orderPay }}руб.
+                {{ props.itemData.orderPay }}руб.
             </div>
         </div>
         <div class="order-status__quantity">
             <div class="order-status__quantity-all">
-                {{ props.itemdata.orderQuantity }} изделия
+                {{ props.itemData.orderQuantity }} изделия
             </div>
             <div class="order-status__quantity-check">
                 <div class="order-status__quantity-ready subtext">
-                    Готово: {{ props.itemdata.orderQuantityCheck }}
+                    Готово: {{ props.itemData.orderQuantityCheck }}
                 </div>
                 <div class="order-status__quantity-issued subtext">
-                    Выдано: {{ props.itemdata.orderQuantityIssued }}
+                    Выдано: {{ props.itemData.orderQuantityIssued }}
                 </div>
             </div>
         </div>
@@ -56,16 +56,16 @@
         default: 'status'
     },
     cash: {
-        type: Float32Array,
+        type: Number,
         required: false,
         default: 3000
     },
     days: {
-        type: Int16Array,
+        type: Number,
         required: false,
         default: 14
     },
-    itemdata: {
+    itemData: {
         type: Object,
         required: true,
         default: {
@@ -110,12 +110,16 @@ if (props.status === 'surcharge') {
         width: 100%;
         height: 75px;
         padding: 20px;
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 2fr 2.5fr 1fr 2fr 2fr;
         align-items: center;
+        transition: 0.1s;
+        &:hover{
+            background-color: $unactiveColor;
+        }
     }
     &__btn {
-        width: 250px;
+        width: 100%;
         height: 32px;
     }
     &__datentime {
