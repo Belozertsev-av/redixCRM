@@ -102,8 +102,7 @@ const nextMonth = async (currentMonth: String) => {
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin: $padding;
-            @include adaptive-value('width', 320, 290, 0);
+            width: 300px;
             padding: $paddingMedium;
         }
         &__title{

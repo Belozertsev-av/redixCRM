@@ -71,6 +71,7 @@
 
   		&__list-body {
           padding: $paddingMedium;
+          height: 100%;
   		}
       
   		&__item {

@@ -1,14 +1,27 @@
 <template>
     <v-card elevation="4">
         <div class="toolbar">
-            <v-btn prepend-icon="mdi-menu" variant="plain" size="small" class="menu">Меню</v-btn>
-            <v-btn append-icon="mdi-layers" variant="plain" size="small" class="stat">Статистика</v-btn>
+            <v-btn prepend-icon="mdi-menu"
+             variant="plain" 
+             size="small" 
+             class="menu"
+             @click="clicks.toggleMenu">Меню</v-btn>
+            <v-btn append-icon="mdi-layers"
+             variant="plain" 
+             size="small" 
+             class="stat"
+             @click="clicks.toggleStats">Статистика</v-btn>
         </div>
     </v-card>
 </template>
 
 
-<script>
+<script setup lang="ts">
+    import { useClicksStore } from '@/stores/clicks'
+
+    const clicks = useClicksStore()
+
+
 </script>
 
 
