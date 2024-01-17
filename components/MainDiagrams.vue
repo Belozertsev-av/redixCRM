@@ -3,24 +3,24 @@
         <div class="diagrams__body">
             <main-month-diagram class="diagrams__item"
                 month="jan"
-                plan="500000"
-                sum="347000"></main-month-diagram>
+                :plan="500000"
+                :sum="347000"></main-month-diagram>
             <main-category-diagram class="diagrams__item"
                 category="repair"
-                profit="347000"
-                sum="217000"></main-category-diagram>
+                :profit="347000"
+                :sum="217000"></main-category-diagram>
             <main-category-diagram class="diagrams__item"
                 category="keys"
-                profit="347000"
-                sum="90000"></main-category-diagram>
+                :profit="347000"
+                :sum="90000"></main-category-diagram>
             <main-category-diagram class="diagrams__item"
                 category="products"
-                profit="347000"
-                sum="30000"></main-category-diagram>
+                :profit="347000"
+                :sum="30000"></main-category-diagram>
             <main-category-diagram class="diagrams__item"
                 category="refund"
-                profit="347000"
-                sum="7000"></main-category-diagram>
+                :profit="347000"
+                :sum="7000"></main-category-diagram>
         </div>
     </v-card>
 </template>

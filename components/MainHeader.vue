@@ -11,6 +11,10 @@
                     <NuxtLink to="/" ><v-btn  variant="plain" class="link">Авторизация</v-btn>
                     </NuxtLink>
                 </li>
+                <li>
+                    <NuxtLink to="/receiptPage" ><v-btn  variant="plain" class="link">Окно квитанции</v-btn>
+                    </NuxtLink>
+                </li>
            </ul>
         </div>
 </template>
