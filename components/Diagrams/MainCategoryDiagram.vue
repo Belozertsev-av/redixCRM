@@ -82,8 +82,7 @@ if (props.category === 'keys') {
         justify-content: center;
         align-items: flex-start;
         text-align: start;
-        margin: $padding;
-        @include adaptive-value('width', 160, 140, 0);
+        width: 145px;
         padding: $paddingMedium;
     }
 

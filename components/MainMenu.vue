@@ -7,7 +7,7 @@
                             <v-text-field v-bind="props" label="Интервал от" variant="solo" class="sorting__search-from" append-inner-icon="mdi mdi-calendar-blank">
                             </v-text-field>
                         </template>
-                        <v-date-picker>
+                        <v-date-picker color="#1f93ff">
                         </v-date-picker>
                     </v-menu>
                     <v-menu>
@@ -15,7 +15,7 @@
                         <v-text-field v-bind="props" label="Интервал до" variant="solo" class="sorting__search-to" append-inner-icon="mdi mdi-calendar-blank">
                         </v-text-field>
                     </template>
-                    <v-date-picker>
+                    <v-date-picker color="#1f93ff">
                     </v-date-picker>
                 </v-menu>
             </div>
@@ -54,18 +54,17 @@
 </template>
 
 <script setup>
-    
 </script>
 
 <style lang="scss" scoped>
 
 .sorting{
     &__main{
-        @include adaptive-value('width', 320, 290, 0);
-        padding: $padding;
+        width: 320px;
         height: 100%;
     }
     &__main-body{
+        border-radius: 0;
         padding: $padding * 2;
         width: 100%;
         height: 100%;

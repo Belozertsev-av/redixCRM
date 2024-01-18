@@ -20,6 +20,10 @@
     "vuetify": "^3.4.4"
   },
   "dependencies": {
-    "@mdi/font": "^7.3.67"
+    "@jamescoyle/vue-icon": "^0.1.2",
+    "@mdi/font": "^7.3.67",
+    "@mdi/js": "^7.4.47",
+    "@pinia/nuxt": "^0.5.1",
+    "pinia": "^2.1.7"
   }
 }
