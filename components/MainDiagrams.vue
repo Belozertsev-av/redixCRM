@@ -5,6 +5,17 @@
                 month="jan"
                 :plan="500000"
                 :sum="347000"></main-month-diagram>
+            <main-daily-diagram
+            :daily-sum="{
+                mon: 10000,
+                tue: 15000,
+                wed: 20000,
+                thu: 25000,
+                fri: 30000,
+                sat: 35000,
+                sun: 0 
+            }"
+            :plan="500000"></main-daily-diagram>
             <main-category-diagram class="diagrams__item"
                 category="repair"
                 :profit="347000"
@@ -28,6 +39,7 @@
 <script setup>
 import MainMonthDiagram from './Diagrams/MainMonthDiagram.vue';
 import MainCategoryDiagram from './Diagrams/MainCategoryDiagram.vue';
+import MainDailyDiagram from './Diagrams/MainDailyDiagram.vue';
 
 </script>
 
