@@ -22,10 +22,10 @@
             </div>
             <div class="payment__footer">
                 <div class="payment__footer-buttons">
-                    <v-btn class="btns">
+                    <v-btn class="btns" @click="$emit('closeModal')">
                         Оплатить
                     </v-btn>
-                    <v-btn class="btns">
+                    <v-btn class="btns" @click="$emit('closeModal')">
                         Отмена
                     </v-btn>
                 </div>
@@ -35,6 +35,7 @@
 </template>
 
 <script setup>
+    const emits = defineEmits(['closeModal'])
     const selection = ref(2)
 </script>
 

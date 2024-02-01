@@ -37,9 +37,9 @@
 </template>
 
 <script setup>
-import MainMonthDiagram from './Diagrams/MainMonthDiagram.vue';
-import MainCategoryDiagram from './Diagrams/MainCategoryDiagram.vue';
-import MainDailyDiagram from './Diagrams/MainDailyDiagram.vue';
+import MainMonthDiagram from '../diagrams/MainMonthDiagram.vue';
+import MainCategoryDiagram from '../diagrams/MainCategoryDiagram.vue';
+import MainDailyDiagram from '../diagrams/MainDailyDiagram.vue';
 
 </script>
 
