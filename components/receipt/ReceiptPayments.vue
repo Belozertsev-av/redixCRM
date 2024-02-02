@@ -2,17 +2,23 @@
   <v-card elevation="4" class="payments">
     <div class="payments__body">
       <div class="payments__list">
-        <receipt-pay :amount="3000" type="cash"></receipt-pay>
-        <receipt-pay :amount="1000" type="card"></receipt-pay>
+        <receipt-pay 
+        v-for="item in actualTransactions"
+        :key="item.id"
+        :amount="item.amount" 
+        :type="item.type"></receipt-pay>
         <receipt-pay-new @click="openModal = true"></receipt-pay-new>
         <v-dialog v-model="openModal">
-          <receipt-pay-method @close-modal="openModal = false">
+          <receipt-pay-method 
+          @create-transaction="addTransaction"
+          @cancel="openModal = false">
           </receipt-pay-method>
         </v-dialog>
       </div>
       <v-card elevation="4" class="payments__footer">
         <div class="payments__footer-body">
-          <v-btn class="payments__remains">Остаток: {{ props.remains }} руб.</v-btn>
+          <v-btn class="payments__remains" 
+          :style="(remains == 0) ? `background-color: #46bc32;` : `background-color: #ff471f;`">{{ statusText }}</v-btn>
           <div class="payments__amount title">Итого: {{ props.amount }} руб.</div>
         </div>
       </v-card>
@@ -26,10 +32,10 @@
   import ReceiptPayMethod from "~/components/receipt/ReceiptPayMethod.vue";
 
   const props = defineProps({
-    remains: {
-      type: Number,
+    transactions: {
+      type: Array<{ id: number, amount: number, type: string }>,
       required: false,
-      default: 0
+      default: []
     },
     amount: {
       type: Number,
@@ -37,9 +43,21 @@
       default: 0
     }
   })
-
+  const actualTransactions = reactive(props.transactions)
   const openModal = ref(false)
+  const remains = computed(() => {
+    let temp = props.amount
+    actualTransactions.forEach(element => temp -= element.amount);
+    return temp
+  })
+  const statusText = computed(() => {
+    return (remains.value == 0) ? 'Оплачено' : `Остаток: ${remains.value} руб.`
+  })
 
+  const addTransaction = (data: { id: number, amount: number, type: string }) => {
+    actualTransactions.push(data)
+    openModal.value = false
+  }
 </script>
 
 <style lang="scss" scoped>
