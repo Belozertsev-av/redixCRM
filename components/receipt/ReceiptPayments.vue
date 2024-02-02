@@ -63,6 +63,7 @@
 <style lang="scss" scoped>
   .payments{
     width: 100%;
+    border-radius: 0;
     &__body{
       width: 100%;
       display: flex;
