@@ -67,7 +67,6 @@ watch(phoneNumber, () => {
   width: 100%;
   height: 100%;
   padding-right: $paddingMedium;
-  padding-top: $paddingGrand;
 
   &__discount {
     width: fit-content;
@@ -77,7 +76,7 @@ watch(phoneNumber, () => {
   }
 }
 .text-field{
-  width: 320px;
+  max-width: 320px;
 }
   .v-chip {
     opacity: 1;

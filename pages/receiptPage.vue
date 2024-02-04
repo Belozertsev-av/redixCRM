@@ -42,10 +42,12 @@
 <style lang="scss" scoped>
     .receipt {
         width: 100%;
+        height: 100%;
 		&__body {
             display: flex;
-            margin: 0 auto;
+            padding: 0 auto;
             width: 100%;
+            height: 100%;
 		}
 
 		&__column {
@@ -53,6 +55,7 @@
             flex-direction: column;
             justify-content: space-between;
             width: 100%;
+            padding: $paddingGrand 0;
             &:first-child{
                 width: 35%;
             }         
@@ -63,12 +66,10 @@
                 display: flex;
                 flex-direction: column;
                 flex: 1 1 auto;
-                margin-top: $paddingGrand;
             }
             &:last-child{
                 display: flex;
                 justify-content: space-between;
-                padding-top: $paddingMedium;
             }
 		}
 
@@ -79,7 +80,7 @@
 		}
 
 		&__btn-block {
-
+            padding: $paddingMedium 0;
 		}
         &__btn{
             margin: $padding;
