@@ -1,6 +1,6 @@
 <template>
     <div class="new__main">
-        <v-card class="new__main-body" elevation="4">
+        <v-card class="new__main-body">
             <div class="new__main-btn">
                 <v-btn block>
                     + Добавить изделие
@@ -14,8 +14,10 @@
 </script>
 
 <style lang="scss" scoped>
-.new__main {
-    padding: 10px;
+.new{
+    &__main-body{
+        border-radius: 0;
+    }
 }
 .v-btn {
     display: flex;
