@@ -106,7 +106,7 @@ const nextMonth = async (currentMonth: String) => {
             padding: $paddingMedium;
         }
         &__title{
-            padding-bottom: $padding * 2;
+            padding-bottom: $padding;
         }
         &__canvas{
             transition: all 0.2s;
