@@ -3,7 +3,7 @@
         <v-card class="payment__main-body" elevation="4">
             <div class="payment__header">
                 <div class="payment__header-textfeild">
-                    <v-text-field label="Сумма"></v-text-field>
+                    <v-text-field label="Сумма" v-model="amount"></v-text-field>
                 </div>
             </div>
             <div class="payment__middle">
@@ -14,18 +14,18 @@
                         mandatory
                     >
                         <div class="switches">
-                            <v-chip id="1" variant="text">Наличными</v-chip>
-                            <v-chip id="2" variant="text">По карте</v-chip> 
+                            <v-chip id="cash" value="cash" variant="text">Наличными</v-chip>
+                            <v-chip id="card" value="card" variant="text">По карте</v-chip> 
                         </div>
                     </v-chip-group>
                 </div>
             </div>
             <div class="payment__footer">
                 <div class="payment__footer-buttons">
-                    <v-btn class="btns">
+                    <v-btn class="btns" @click="$emit('createTransaction', { id: Math.random(), amount: Number(amount), type: selection})">
                         Оплатить
                     </v-btn>
-                    <v-btn class="btns">
+                    <v-btn class="btns" @click="$emit('cancel')">
                         Отмена
                     </v-btn>
                 </div>
@@ -34,8 +34,10 @@
     </div>
 </template>
 
-<script setup>
-    const selection = ref(2)
+<script lang="ts" setup>
+    const emits = defineEmits(['createTransaction', 'cancel'])
+    const selection = ref('card')
+    const amount = ref('')
 </script>
 
 <style lang="scss" scoped>

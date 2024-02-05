@@ -1,6 +1,6 @@
 <template>
     <div class="productitem__main">
-        <v-card elevation="4" class="productitem__main-body">
+        <v-card class="productitem__main-body">
             <div class="productitem__main-container">
                 <div class="productitem__main-overview">
                     <div class="productitem__main-text">
@@ -46,7 +46,9 @@ const props = defineProps({
 <style lang="scss" scoped>
 .productitem {
     &__main {
-        padding: 10px;
+    }
+    &__main-body{
+        border-radius: 0;
     }
     &__main-container{
         display: flex;

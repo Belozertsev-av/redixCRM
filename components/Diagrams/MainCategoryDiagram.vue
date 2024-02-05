@@ -119,4 +119,5 @@ if (props.category === 'keys') {
         height: 10px;
         border-radius: $radius;
     }
-}</style>
+}
+</style>
