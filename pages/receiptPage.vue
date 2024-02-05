@@ -2,6 +2,7 @@
     <div>
         Hello World!
     </div>
+    <MainMenu></MainMenu>
 </template>
 
 <script setup lang="ts">
