@@ -2,20 +2,36 @@
     <div class="sorting__main">
         <v-card class="sorting__main-body" elevation="4">
             <div class="sorting__search">
-                    <v-menu>
-                        <template v-slot:activator="{ props }">
-                            <v-text-field v-bind="props" label="Интервал от" variant="solo" class="sorting__search-from" append-inner-icon="mdi mdi-calendar-blank">
-                            </v-text-field>
-                        </template>
-                        <v-date-picker color="#1f93ff">
-                        </v-date-picker>
-                    </v-menu>
-                    <v-menu>
+                <v-menu :close-on-content-click="false">
                     <template v-slot:activator="{ props }">
-                        <v-text-field v-bind="props" label="Интервал до" variant="solo" class="sorting__search-to" append-inner-icon="mdi mdi-calendar-blank">
+                        <v-text-field
+                        readonly
+                        v-model="due1"
+                        :value="formattedDate1"
+                        v-bind="props"
+                        label="Интервал от" 
+                        variant="solo" 
+                        class="sorting__search-to" 
+                        append-inner-icon="mdi mdi-calendar-blank">
                         </v-text-field>
                     </template>
-                    <v-date-picker color="#1f93ff">
+                    <v-date-picker v-model="due1" color="#1f93ff">
+                    </v-date-picker>
+                </v-menu>
+                <v-menu :close-on-content-click="false">
+                    <template v-slot:activator="{ props }">
+                        <v-text-field
+                        readonly
+                        v-model="due2"
+                        :value="formattedDate2"
+                        v-bind="props"
+                        label="Интервал до" 
+                        variant="solo" 
+                        class="sorting__search-to" 
+                        append-inner-icon="mdi mdi-calendar-blank">
+                        </v-text-field>
+                    </template>
+                    <v-date-picker v-model="due2" color="#1f93ff">
                     </v-date-picker>
                 </v-menu>
             </div>
@@ -53,7 +69,18 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+    import { format } from 'date-fns/format';
+
+    const due1 = ref(null)
+    const due2 = ref(null)
+
+    const formattedDate1 = computed(() => {
+        return due1.value ? format(due1.value, 'd L YYY') : ''
+    })
+    const formattedDate2 = computed(() => {
+        return due2.value ? format(due2.value, 'd L YYY') : ''
+    })
 </script>
 
 <style lang="scss" scoped>
