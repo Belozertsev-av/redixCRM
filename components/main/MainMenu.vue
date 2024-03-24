@@ -76,10 +76,10 @@
     const due2 = ref(null)
 
     const formattedDate1 = computed(() => {
-        return due1.value ? format(due1.value, 'd L YYY') : ''
+        return due1.value ? format(due1.value, 'dd.LL.YYY') : ''
     })
     const formattedDate2 = computed(() => {
-        return due2.value ? format(due2.value, 'd L YYY') : ''
+        return due2.value ? format(due2.value, 'dd.LL.YYY') : ''
     })
 </script>
 
