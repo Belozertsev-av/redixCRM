@@ -4,15 +4,8 @@
             <div class="sorting__search">
                 <v-menu :close-on-content-click="false">
                     <template v-slot:activator="{ props }">
-                        <v-text-field
-                        readonly
-                        v-model="due1"
-                        :value="formattedDate1"
-                        v-bind="props"
-                        label="Интервал от" 
-                        variant="solo" 
-                        class="sorting__search-to" 
-                        append-inner-icon="mdi mdi-calendar-blank">
+                        <v-text-field readonly v-model="due1" :value="formattedDate1" v-bind="props" label="Интервал от"
+                            variant="solo" class="sorting__search-to" append-inner-icon="mdi mdi-calendar-blank">
                         </v-text-field>
                     </template>
                     <v-date-picker v-model="due1" color="#1f93ff">
@@ -20,15 +13,8 @@
                 </v-menu>
                 <v-menu :close-on-content-click="false">
                     <template v-slot:activator="{ props }">
-                        <v-text-field
-                        readonly
-                        v-model="due2"
-                        :value="formattedDate2"
-                        v-bind="props"
-                        label="Интервал до" 
-                        variant="solo" 
-                        class="sorting__search-to" 
-                        append-inner-icon="mdi mdi-calendar-blank">
+                        <v-text-field readonly v-model="due2" :value="formattedDate2" v-bind="props" label="Интервал до"
+                            variant="solo" class="sorting__search-to" append-inner-icon="mdi mdi-calendar-blank">
                         </v-text-field>
                     </template>
                     <v-date-picker v-model="due2" color="#1f93ff">
@@ -44,8 +30,7 @@
                 </v-btn>
             </div>
             <div class="sorting__search">
-                <v-text-field class="sorting__textfield" label="Поиск" append-inner-icon="mdi-magnify"
-                ></v-text-field>
+                <v-text-field class="sorting__textfield" label="Поиск" append-inner-icon="mdi-magnify"></v-text-field>
             </div>
             <v-radio-group class="sorting__checkboxes">
                 <v-radio class="sorting__checkbox" value="num" label="По номеру квитанции"></v-radio>
@@ -70,67 +55,76 @@
 </template>
 
 <script setup lang="ts">
-    import { format } from 'date-fns/format';
+import { format } from 'date-fns/format';
 
-    const due1 = ref(null)
-    const due2 = ref(null)
+const due1 = ref(null)
+const due2 = ref(null)
 
-    const formattedDate1 = computed(() => {
-        return due1.value ? format(due1.value, 'd L YYY') : ''
-    })
-    const formattedDate2 = computed(() => {
-        return due2.value ? format(due2.value, 'd L YYY') : ''
-    })
+const formattedDate1 = computed(() => {
+    return due1.value ? format(due1.value, 'dd.LL.YYY') : ''
+})
+const formattedDate2 = computed(() => {
+    return due2.value ? format(due2.value, 'dd.LL.YYY') : ''
+})
 </script>
 
 <style lang="scss" scoped>
-
-.sorting{
-    &__main{
+.sorting {
+    &__main {
         width: 320px;
         height: 100%;
     }
-    &__main-body{
+
+    &__main-body {
         border-radius: 0;
         padding: $padding * 2;
         width: 100%;
         height: 100%;
     }
-    &__search{
+
+    &__search {
         margin-top: $paddingMedium;
         display: flex;
         justify-content: space-between;
     }
-    &__search-from{
+
+    &__search-from {
         margin-right: $padding;
     }
-    &__search-to{
+
+    &__search-to {
         margin-left: $padding;
     }
-    &__twinbuttons{
+
+    &__twinbuttons {
         display: flex;
         justify-content: space-between;
     }
+
     &__button {
         width: 48%;
     }
-    &__checkboxes{
+
+    &__checkboxes {
         display: flex;
         flex-direction: column;
     }
-    &__checkbox{
+
+    &__checkbox {
         color: black;
     }
-    &__footerbuttons{
+
+    &__footerbuttons {
         display: grid;
     }
-    &__footerbuttons-button{
+
+    &__footerbuttons-button {
         margin-top: $paddingMedium;
-        &:first-child{
+
+        &:first-child {
             margin-top: 0px;
         }
     }
 
 }
-
 </style>
