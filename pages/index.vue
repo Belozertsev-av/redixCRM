@@ -1,5 +1,5 @@
 <template>
-    <auth-window/>
+  <auth-window/>
 </template>
 
 <script setup>

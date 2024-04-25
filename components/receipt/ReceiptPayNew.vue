@@ -10,7 +10,7 @@
 <script setup lang="ts">
 
 </script>
-
+ 
 <style lang="scss" scoped>
 .pay {
   cursor: pointer;
