@@ -53,12 +53,10 @@
 </template>
 
 <script setup lang="ts">
-const types = ref([
-    {name: "Повреждение швов"},
-    {name: "Царапины"},
-    {name: "Сдиры"},
-    {name: "Разрыв на внешней стороне союзке"},
-])
+import type {Damage} from "~/server/model/commonTypes";
+
+const data: Damage[] = useFetch('/api/damages').data.value
+const types = ref<string[]>([])
 const values = ref([])
 const meaning = ref(100)
 const allSelected = computed(() => {
@@ -66,6 +64,10 @@ const allSelected = computed(() => {
 })
 const minus10 = () => meaning.value <= 9 ? meaning.value -= meaning.value : meaning.value -= 10
 const plus10 = () => meaning.value >= 91 ? meaning.value += (100 - meaning.value) : meaning.value += 10
+
+onMounted(() => {
+  types.value = data.map(it => it.damage)
+})
 </script>
 
 <style lang="scss" scoped>

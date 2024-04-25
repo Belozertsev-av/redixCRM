@@ -25,6 +25,8 @@
     "@mdi/js": "^7.4.47",
     "@pinia/nuxt": "^0.5.1",
     "date-fns": "^3.3.1",
+    "firebase": "^10.11.0",
+    "firebase-admin": "^12.1.0",
     "pinia": "^2.1.7"
   }
 }
