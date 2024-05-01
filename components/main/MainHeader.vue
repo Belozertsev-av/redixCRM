@@ -5,7 +5,7 @@
                     <NuxtLink to="/mainPage" ><v-btn  variant="plain" class="link">Главная</v-btn></NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink to="#" ><v-btn  variant="plain" class="link">Настройки</v-btn></NuxtLink>
+                    <NuxtLink to="/productPage" ><v-btn  variant="plain" class="link">Окно продукта</v-btn></NuxtLink>
                 </li>
                 <li>
                     <NuxtLink to="/" ><v-btn  variant="plain" class="link">Авторизация</v-btn>

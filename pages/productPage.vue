@@ -1,9 +1,9 @@
 <template>
-    
+    <product-damage></product-damage>
 </template>
 
 <script setup lang="ts">
-import type testLVue from '~/components/testL.vue';
+import ProductDamage from "~/components/product/productDamage.vue";
 
     
 </script>
