@@ -16,8 +16,8 @@ $unactiveColor: #efeded;
 $unactiveFontColor: #989898;
 $fontColor: #000;
 $fontSecondaryColor: rgba(
-    $color: #000000,
-    $alpha: 0.56
+        $color: #000000,
+        $alpha: 0.56
 );
 $primaryColor: #1f93ff;
 $primaryYellow: #d8cd2c;
@@ -29,21 +29,21 @@ $maxWidth: 1440;
 $maxWidthContainer: 1170;
 
 @mixin adaptive-value($property, $startSize, $minSize, $type) {
-    $addSize: $startSize - $minSize;
-    @if $type==1 {
-        //только если меньше контейнера
-        #{$property}: $startSize + px;
-        @media (max-width: #{$maxWidthContainer + px}) {
-            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
-        }
-    } @else if $type==2 {
-        //только если больше контейнера
-        #{$property}: $startSize + px;
-        @media (min-width: #{$maxWidthContainer + px}) {
-            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
-        }
-    } @else {
-        // всегда
-        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+  $addSize: $startSize - $minSize;
+  @if $type==1 {
+    //только если меньше контейнера
+    #{$property}: $startSize + px;
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
     }
+  } @else if $type==2 {
+    //только если больше контейнера
+    #{$property}: $startSize + px;
+    @media (min-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+  } @else {
+    // всегда
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+  }
 }

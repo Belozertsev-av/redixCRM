@@ -6,5 +6,5 @@ export const useClicksStore = defineStore('clicks', () => {
     const toggleStats = () => stats.value = !stats.value
     const moveBack = async () => await navigateTo('/mainPage')
 
-    return { menu, stats, toggleMenu, toggleStats, moveBack }
+    return {menu, stats, toggleMenu, toggleStats, moveBack}
 })

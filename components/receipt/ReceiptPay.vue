@@ -8,23 +8,23 @@
 </template>
 
 <script setup lang="ts">
-  const props = defineProps({
-    amount: {
-      type: Number,
-      required: true,
-      default: '0'
-    },
-    type: {
-      type: String,
-      required: true,
-      default: 'default'
-    }
-  })
-  const type = computed(() => {
-    if (props.type == 'cash') return 'Наличные'
-    else if (props.type == 'card') return 'По карте'
-    else return 'Вид оплаты не определен'
-  })
+const props = defineProps({
+  amount: {
+    type: Number,
+    required: true,
+    default: '0'
+  },
+  type: {
+    type: String,
+    required: true,
+    default: 'default'
+  }
+})
+const type = computed(() => {
+  if (props.type == 'cash') return 'Наличные'
+  else if (props.type == 'card') return 'По карте'
+  else return 'Вид оплаты не определен'
+})
 </script>
 
 <style lang="scss" scoped>
@@ -47,6 +47,7 @@
     text-align: center;
     align-items: center;
   }
+
   &__amount {
     padding-bottom: $padding;
   }

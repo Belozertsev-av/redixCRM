@@ -2,38 +2,43 @@
 @import "./_variables";
 
 body {
-    font-family: "Roboto", sans-serif;
-    @include adaptive-value("font-size", $fontSizeStart, $fontSizeEnd, 0);
-    overflow: hidden;
-    &::-webkit-scrollbar {
-        width: 0;
-    }
+  font-family: "Roboto", sans-serif;
+  @include adaptive-value("font-size", $fontSizeStart, $fontSizeEnd, 0);
+  overflow: hidden;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
+
 .container {
-    max-width: 1460px;
-    padding: 0 20px;
-    margin: 0 auto;
-    height: 100%;
+  max-width: 1460px;
+  padding: 0 20px;
+  margin: 0 auto;
+  height: 100%;
 }
+
 .title {
-    @include adaptive-value("font-size", $titleSizeStart, $titleSizeEnd, 0);
-    font-weight: 700;
+  @include adaptive-value("font-size", $titleSizeStart, $titleSizeEnd, 0);
+  font-weight: 700;
 }
 
 .subtitle {
-    @include adaptive-value("font-size", $subtitleSizeStart, $subtitleSizeEnd, 0);
-    font-weight: 700;
+  @include adaptive-value("font-size", $subtitleSizeStart, $subtitleSizeEnd, 0);
+  font-weight: 700;
 }
 
 .subtext {
-    @include adaptive-value("font-size", $subtextSizeStart, $subtextSizeEnd, 0);
-    color: $fontSecondaryColor;
+  @include adaptive-value("font-size", $subtextSizeStart, $subtextSizeEnd, 0);
+  color: $fontSecondaryColor;
 }
+
 .text {
-    font-family: "Roboto", sans-serif;
-    @include adaptive-value("font-size", $fontSizeStart, $fontSizeEnd, 0);
+  font-family: "Roboto", sans-serif;
+  @include adaptive-value("font-size", $fontSizeStart, $fontSizeEnd, 0);
 }
+
 .link {
-    color: #fff;
-    opacity: 1;
+  color: #fff;
+  opacity: 1;
 }
