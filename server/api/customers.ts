@@ -1,12 +1,13 @@
 import {db} from '../connection'
 import {H3Event} from "h3";
-import {Damage} from "~/server/model/commonTypes";
+import {Customers} from "~/server/model/commonTypes";
+
 export default defineEventHandler(async (event: H3Event) => {
-    const damagesSnap = await db.collection('damages').get()
-    return damagesSnap.docs.map(doc => {
+    const customerSnap = await db.collection('customers').get()
+    return customerSnap.docs.map(doc => {
         return {
             uuid: doc.id,
             ...doc.data()
-        } as Damage[]
+        } as unknown as Customers[]
     })
 })
