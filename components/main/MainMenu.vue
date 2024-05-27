@@ -19,7 +19,7 @@
           </template>
           <v-date-picker v-model="due2" color="#1f93ff">
           </v-date-picker>
-        </v-menu>
+        </v-menu> 
       </div>
       <div class="sorting__twinbuttons">
         <v-btn class="sorting__button">
